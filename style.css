@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(169, 77, 255);
+}
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+.mood{
+    /* border: 2px solid rgb(125, 242, 53); */
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-image: url(./images/music-disc-with-black-details-svgrepo-com.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(350deg);
+    transition: 0.3 ease;
+    margin: 0 auto;
+    position: relative; 
+    background-color: rgb(143, 244, 71);
+    animation: spin 6s linear infinite;
+}
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.mood:hover{
+    animation-play-state: paused;
+}
+.mood .mood-bt{
+    position: absolute;
+    top:110px;
+    left: 20px;
+}
+.mood-bt .buttons{
+    border-width: 0;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    position: relative;
+}
+.mood1{
+    background-color: rgb(86, 232, 86);
+    position: absolute;
+    bottom: 60px;
+    right: 84px;
+}
+.mood2{
+    background-color: red;
+    position: absolute;
+    left: 21px;
+    bottom: 185px;
+}
+.mood3{
+    background-color: rgb(247, 230, 42);
+    position: absolute;
+    left: 130px;
+    bottom: 55px;
+}
+.mood4{
+    background-color: gray;
+    position: absolute;
+    right: 30px;
+    top: 78px;
+}
+.mood5{
+    background-color: rgb(65, 65, 213);
+    position: absolute;
+    left: 140px;
+    top: 82px;
+}
+.bt:hover {
+    background-color: beige;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.songs{
+    position: relative;
+}
+.songs img{
+    height: 30px;
+}
+.song{
+    height: 250px;
+}
+ul{
+    list-style: none;
+}
+.song li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+    width: 80px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+.song li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.moodType{
+    color: rgb(221, 211, 208);
+}
+.footer{
+    margin: 60px 180px;
+}
+audio{
+    width: 240px;
+    height: 50px;
+}
+.nextBtn{
+    width: 70px;
+    height: 40px;
+    border-radius: 30px;
+    border: 2px coral;
+    background-color: coral;
+    position: absolute;
+    left :280px;
+    top: 56px;
+}
+.nextBtn:hover{
+    background-color: beige;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Based Music Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header"><h2>Listern To Your Mood</h2></div>
+    <div class="mood">
+        <div class="mood-bt">
+            <button class="buttons bt mood1" data-value="calm">CALM<div>🧘</div></button>
+            <button class="buttons bt mood2" data-value="energy">ENERGY<div>🔥</div></button>
+            <button class="buttons bt mood3" data-value="happy">HAPPY<div>😄</div></button>
+            <button class="buttons bt mood4" data-value="sad">SAD<div>😞</div></button>
+            <button class="buttons bt mood5" data-value="focus">FOCUS<div>🧐</div></button>
+        </div>
+    </div>     
+    <div class="footer">
+        <div class="songs">
+            <h3>Songs For You <img src="./images/music-svgrepo-com.svg" alt=""><span class="moodType"></span></h3>
+            <audio id="player" src="" controls></audio>
+
+            <button id="nextBtn" class="buttons nextBtn">Next</button>
+            <ul class="song"></ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
