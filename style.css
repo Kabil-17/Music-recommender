@@ -11,7 +11,6 @@ body{
     margin-bottom: 70px;
 }
 .mood{
-    /* border: 2px solid rgb(125, 242, 53); */
     height: 300px;
     width: 300px;
     border-radius: 50%;
@@ -21,7 +20,7 @@ body{
     background-size: contain;
     transform: rotate(350deg);
     transition: 0.3 ease;
-    margin: 0 auto;
+    margin: 20px auto;
     position: relative; 
     background-color: rgb(143, 244, 71);
     animation: spin 6s linear infinite;
@@ -148,13 +147,51 @@ audio{
     color: rgb(221, 211, 208);
 }
 @media (max-width: 600px) {
-    body {
-        grid-template-columns: 1fr; /* only one column */
-        margin-top: 50px;
-    }
-    .footer{
-        grid-template-columns: 1fr;
-        margin: 70px auto;
+
+
+    .header {
+        margin: 30px 0 40px;
     }
 
+    .footer {
+        margin: 80px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .songs {
+        width: 100%;
+        max-width: 300px;
+        position: relative;
+    }
+
+    audio {
+        width: 100%;
+    }
+
+    .nextBtn {
+        position: static;      
+        margin: 15px auto 0;
+        display: block;
+    }
+
+    .dropDown {
+        margin-top: 15px;
+    }
+
+    .song {
+        position: static;      
+        margin-top: 10px;
+    }
+
+    .song li {
+        width: 40%;
+        text-align: center;
+    }
+
+    .mood {
+        margin: 80px auto;
+    }
 }
