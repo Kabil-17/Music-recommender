@@ -43,6 +43,7 @@ body{
     left: 20px;
 }
 .mood-bt .buttons{
+    cursor: pointer;
     border-width: 0;
     border-radius: 50%;
     height: 70px;
@@ -84,39 +85,14 @@ body{
     transform: scale(1.1);
     transition: 0.2s;
 }
-.songs{
-    position: relative;
-}
-.songs img{
-    height: 30px;
-}
-.song{
-    height: 250px;
-}
-ul{
-    list-style: none;
-}
-.song li {
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 8px 0;
-    width: 80px;
-    padding: 10px 15px;
-    border-radius: 10px;
-    transition: 0.2s ease;
-}
-.song li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
 
-a{
-    text-decoration: none;
-    color: inherit;
-}
-.moodType{
-    color: rgb(221, 211, 208);
-}
 .footer{
-    margin: 60px 180px;
+    margin: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
 }
 audio{
     width: 240px;
@@ -134,4 +110,51 @@ audio{
 }
 .nextBtn:hover{
     background-color: beige;
+}
+.songs{
+    position: relative;
+}
+.songs img{
+    height: 30px;
+}
+.dropDown{
+    position: relative;
+}
+.songToggle{
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.song{
+    position:absolute;
+    top: 100%;
+    display: none;
+    list-style: none;
+}
+.song li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+    width: 80px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+.song li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.moodType{
+    color: rgb(221, 211, 208);
+}
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr; /* only one column */
+        margin-top: 50px;
+    }
+    .footer{
+        grid-template-columns: 1fr;
+        margin: 70px auto;
+    }
+
 }

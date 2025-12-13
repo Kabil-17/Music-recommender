@@ -6,41 +6,46 @@ const musicLib = {
     focus: ["music/focus/song1.mp3", "music/focus/song2.mp3", "music/focus/song3.mp3", "music/focus/song4.mp3", "music/focus/song5.mp3"]
 }
 
+
+let currentIndex = 0;
+let currentMood = '';
+
 //mood button
 const buttons = document.querySelectorAll('.bt');
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         currentIndex = 0;
+        currentMood = button.dataset.value;
         document.querySelector('.song').innerHTML=''
-        switch (button.dataset.value) {
-            case "calm":
-                showSongs("calm");
-                break;
-            case "energy":
-                showSongs("energy");
-                break;
-            case "happy":
-                showSongs("happy");
-                break;
-            case "sad":
-                showSongs("sad");
-                break;
-            case "focus":
-                showSongs("focus");
-                break;
-        }
+        showSongs(currentMood);
     });
 });
-let currentIndex = 0;
+
+//dropDown
+const songToggle = document.querySelector('.songToggle');
+const songList = document.querySelector('.song');
+
+songToggle.addEventListener("click", () => {
+    songList.style.display =
+        songList.style.display === "block" ? "none" : "block";
+});
+
+
+//next button
+    document.getElementById('nextBtn').addEventListener("click", () => {
+        if(!currentMood) return;
+        currentIndex++;
+        if (currentIndex >= musicLib[currentMood].length) currentIndex = 0;
+        loadSong(currentMood);
+    });
 
 //get songs related to mood
 function showSongs(mood) {
     const songs = musicLib[mood];
     let i = 1;
     document.querySelector('.moodType').innerHTML = mood;
-    document.getElementById('player').src = musicLib[mood][currentIndex];
+     playRandom(mood)
     const ul = document.querySelector('.song');
-    
     //set index to choose correct src
     musicLib[mood].forEach((song, i) => {
         const li = document.createElement('li');
@@ -51,14 +56,8 @@ function showSongs(mood) {
         });
         ul.appendChild(li);
     });
-
-    //next button
-    document.getElementById('nextBtn').addEventListener("click", () => {
-        currentIndex++;
-        if (currentIndex >= musicLib[mood].length) currentIndex = 0;
-        loadSong(mood);
-    });
 }
+
 //play songs
 function loadSong(mood) {
     let audio = document.getElementById('player');
@@ -66,4 +65,12 @@ function loadSong(mood) {
     audio.play();
 }
 
+//play a random song from picked mood
+function playRandom(mood){
+    const randomIndex = Math.floor(Math.random()*musicLib[mood].length);
+    currentIndex = randomIndex;
+    let audio = document.getElementById('player');
+    audio.src = musicLib[mood][randomIndex];
+    audio.play();
 
+}
